@@ -1,5 +1,4 @@
-# bikesharingDW
-My first data engineering project, creating a Synapse datawarehouse
+Second data engineering project, using Python, Spark and Azure Databricks to create a data lakehouse architecture.
 
 ## Introduction
 
