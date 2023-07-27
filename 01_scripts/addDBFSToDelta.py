@@ -27,6 +27,7 @@ payment = spark.read.format("csv") \
 payment.write \
   .format("delta") \
   .mode("overwrite") \
+  .option("mergeSchema","true") \
   .save("/delta/payment")
 
 
@@ -57,4 +58,48 @@ rider.write \
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC stations, trips
+# MAGIC ## Read in Station data from DBFS
+
+# COMMAND ----------
+
+station = spark.read.format("csv") \
+    .option("header","False") \
+    .option("sep",",") \
+    .load("/FileStore/DivvybikeSharing/stations.csv")
+
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Write Station data to Delta lake
+
+# COMMAND ----------
+
+station.write \
+    .format("delta") \
+    .mode("overwrite") \
+    .save("/delta/station")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Read in the Trips data from DBFS
+
+# COMMAND ----------
+
+trip = spark.read.format("csv") \
+    .option("sep",",") \
+    .option("header","False") \
+    .load("/FileStore/DivvybikeSharing/trips.csv")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Write trip data to Delta Lake
+
+# COMMAND ----------
+
+trip.write \
+    .format("delta") \
+    .mode("overwrite") \
+    .save("/delta/trip")
