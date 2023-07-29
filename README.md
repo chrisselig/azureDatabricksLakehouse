@@ -20,6 +20,8 @@ At this point, the files were moved to a bronze table storage in the delta lake.
 
 Finally, the tables were cleaned and prepared for analysis by creating the dimension and fact tables below.
 
+The transformations and creation of the tables were done via Python and Spark (sql)
+
 ## Original Model
 
 ![Original Relational Model](https://github.com/chrisselig/bikesharingDW/blob/main/80_imgs_for_readme/divvy-erd.png)
