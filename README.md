@@ -12,20 +12,19 @@ Using the Azure tech stack, I wanted to create the following architecture:
 
 ![architecture diagram](https://github.com/chrisselig/azureDatabricksLakehouse/blob/main/80_imgs_for_readme/architecture.png)
 
-In Azure, I needed to create a Postgres database and loaded the original data into it.
+In Azure, I uploaded csv files to the Databricks file system (DBFS).
 
-Then, I performed some [exploratory data analysis (eda)](https://github.com/chrisselig/bikesharingDW/tree/main/02_eda) using python to get a look at the original datasets. 
+The files were then moved from the DBFS to be stored as parquet files in the delta lake.
 
-Next, the PostgreSQL database was linked to Azure blob storage and the data was loaded as external tables to SQL database in Azure Synapse Analytics.
+At this point, the files were moved to a bronze table storage in the delta lake.
 
-During the transfer to Synapse, the data was transformed from a relational datamodel, to a star schema.
+Finally, the tables were cleaned and prepared for analysis by creating the dimension and fact tables below.
 
-The original model:
+## Original Model
 
 ![Original Relational Model](https://github.com/chrisselig/bikesharingDW/blob/main/80_imgs_for_readme/divvy-erd.png)
 
-The newly created star schema:
-
+## New Star Schema
 ![Star Schema](https://github.com/chrisselig/bikesharingDW/blob/main/80_imgs_for_readme/star_schema_png.png)
 
 
