@@ -10,7 +10,7 @@ A rider can purchase a pass at a kiosk or use a mobile application to unlock a b
 
 Using the Azure tech stack, I wanted to create the following architecture:
 
-![architecture diagram](https://github.com/chrisselig/bikesharingDW/blob/main/80_imgs_for_readme/architecture_image.png)
+![architecture diagram](https://github.com/chrisselig/azureDatabricksLakehouse/blob/main/80_imgs_for_readme/architecture.png)
 
 In Azure, I needed to create a Postgres database and loaded the original data into it.
 
