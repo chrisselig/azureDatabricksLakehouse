@@ -27,7 +27,7 @@ payment = spark.read.format("csv") \
 payment.write \
   .format("delta") \
   .mode("overwrite") \
-  .option("mergeSchema","true") \
+  .option("mergeSchema","false") \
   .save("/delta/payment")
 
 
