@@ -27,7 +27,7 @@ The transformations and creation of the tables were done via Python and Spark (s
 ![Original Relational Model](https://github.com/chrisselig/bikesharingDW/blob/main/80_imgs_for_readme/divvy-erd.png)
 
 ## New Star Schema
-![Star Schema](https://github.com/chrisselig/bikesharingDW/blob/main/80_imgs_for_readme/star_schema_png.png)
+![Star Schema](https://github.com/chrisselig/azureDatabricksLakehouse/blob/main/80_imgs_for_readme/star_schema.png)
 
 
 ## Analysis - Questions that now can be answered
